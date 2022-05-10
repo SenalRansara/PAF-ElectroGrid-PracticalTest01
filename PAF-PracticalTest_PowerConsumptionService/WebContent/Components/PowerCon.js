@@ -32,16 +32,16 @@ $(document).on("click", "#btnSave", function(event)
 	{
 		url : "powerCon",
 		type : t,
-		data : $("#formNotice").serialize(),
+		data : $("#formPowerConsumption").serialize(),
 		dataType : "text",
 		complete : function(response, status)
 		{
-			onNoticeSaveComplete(response.responseText, status);
+			powerConSaveComplete(response.responseText, status);
 		}
 	});
 }); 
 
-function onNoticeSaveComplete(response, status){
+function powerConSaveComplete(response, status){
 	if(status == "success")
 	{
 		var resultSet = JSON.parse(response);
@@ -65,7 +65,7 @@ function onNoticeSaveComplete(response, status){
 		$("#alertError").show();
 	}
 	$("#btnSave").val("");
-	$("#formNotice")[0].reset();
+	$("#formPowerConsumption")[0].reset();
 }
 
 //UPDATE========================================== 
@@ -92,12 +92,12 @@ $(document).on("click", ".btnRemove", function(event){
 		dataType : "text",
 		complete : function(response, status)
 		{
-			onPowerConDeletedComplete(response.responseText, status);
+			powerConDeletedComplete(response.responseText, status);
 		}
 	});
 });
 
-function onPowerConDeletedComplete(response, status)
+function powerConDeletedComplete(response, status)
 {
 	if(status == "success")
 	{
