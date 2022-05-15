@@ -1,4 +1,5 @@
-<%@page import="java.com.electrogrid.power_consumption.repository.PowerConsumptionRepository"%>
+<%@page import="com.PowerConsumption"%>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -60,9 +61,9 @@
 				<br>  
 				<div id="divItemsGrid">   
 					<%
-					PowerConsumptionRepository notPow = new PowerConsumptionRepository();
-   									out.print(notPow.getPowerConsumptions());
-   					%>  
+					PowerConsumption pwCn = new PowerConsumption();
+						out.print(pwCn.getPowerConsumptions());
+					%>  
 					
 				</div>
 			</form>

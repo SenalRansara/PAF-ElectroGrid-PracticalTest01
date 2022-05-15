@@ -156,6 +156,5 @@ function validateNoticeForm() {
 		
 	}	
 
-	 return true; 
-	 
+	return true; 
 }
